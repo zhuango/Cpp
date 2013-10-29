@@ -1,0 +1,20 @@
+﻿生成启动时间为 2012/4/5 星期四 16:52:20。
+     1>项目“E:\MyProjects\VS2010\窗口\窗口\窗口.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Debug\窗口.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         D:\VS2010\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>e:\myprojects\vs2010\窗口\窗口\main.cpp(18): error C2440: “=”: 无法从“const char [9]”转换为“LPCWSTR”
+                 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>e:\myprojects\vs2010\窗口\窗口\main.cpp(21): error C2664: “MessageBoxW”: 不能将参数 2 从“const char [13]”转换为“LPCWSTR”
+                 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>e:\myprojects\vs2010\窗口\窗口\main.cpp(34): error C2664: “CreateWindowExW”: 不能将参数 2 从“const char [9]”转换为“LPCWSTR”
+                 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>e:\myprojects\vs2010\窗口\窗口\main.cpp(54): error C2664: “MessageBoxW”: 不能将参数 2 从“const char [15]”转换为“LPCWSTR”
+                 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>已完成生成项目“E:\MyProjects\VS2010\窗口\窗口\窗口.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:06.66

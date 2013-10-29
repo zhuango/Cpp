@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "杀人", "杀人\杀人.vcxproj", "{FC5FD8CA-9E96-4276-9276-F31A0187CBF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC5FD8CA-9E96-4276-9276-F31A0187CBF3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FC5FD8CA-9E96-4276-9276-F31A0187CBF3}.Debug|Win32.Build.0 = Debug|Win32
+		{FC5FD8CA-9E96-4276-9276-F31A0187CBF3}.Release|Win32.ActiveCfg = Release|Win32
+		{FC5FD8CA-9E96-4276-9276-F31A0187CBF3}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

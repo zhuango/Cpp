@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "关联容器的字符串替换", "关联容器的字符串替换\关联容器的字符串替换.vcxproj", "{89E47BD5-10E4-4D9D-8619-B29CD6006C00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89E47BD5-10E4-4D9D-8619-B29CD6006C00}.Debug|Win32.ActiveCfg = Debug|Win32
+		{89E47BD5-10E4-4D9D-8619-B29CD6006C00}.Debug|Win32.Build.0 = Debug|Win32
+		{89E47BD5-10E4-4D9D-8619-B29CD6006C00}.Release|Win32.ActiveCfg = Release|Win32
+		{89E47BD5-10E4-4D9D-8619-B29CD6006C00}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

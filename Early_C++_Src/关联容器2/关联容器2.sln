@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "关联容器2", "关联容器2\关联容器2.vcxproj", "{E01570A4-C594-415A-82CB-3993E011F15C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E01570A4-C594-415A-82CB-3993E011F15C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E01570A4-C594-415A-82CB-3993E011F15C}.Debug|Win32.Build.0 = Debug|Win32
+		{E01570A4-C594-415A-82CB-3993E011F15C}.Release|Win32.ActiveCfg = Release|Win32
+		{E01570A4-C594-415A-82CB-3993E011F15C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
