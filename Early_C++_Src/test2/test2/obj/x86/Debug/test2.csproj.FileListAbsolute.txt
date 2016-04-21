@@ -1,5 +1,0 @@
-E:\MyProjects\VS2010\test2\test2\bin\Debug\test2.exe
-E:\MyProjects\VS2010\test2\test2\bin\Debug\test2.pdb
-E:\MyProjects\VS2010\test2\test2\obj\x86\Debug\ResolveAssemblyReference.cache
-E:\MyProjects\VS2010\test2\test2\obj\x86\Debug\test2.exe
-E:\MyProjects\VS2010\test2\test2\obj\x86\Debug\test2.pdb
