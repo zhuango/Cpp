@@ -3,7 +3,7 @@ struct ListNode
 {
     int Data;
     ListNode *Next;
-}
+};
 
 template<class item_type>
 class List
@@ -14,5 +14,5 @@ class List
         List *Insert();
         List *Precursor();
     private:
-        ListNode *mHead
+        ListNode *mHead;
 };
