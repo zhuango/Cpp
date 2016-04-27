@@ -13,3 +13,6 @@
 *.a
 
 *.vscode
+*.codelite
+*.Debug
+*.Makefile
