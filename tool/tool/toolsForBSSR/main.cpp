@@ -83,13 +83,12 @@ void generate(string wordlist, map<string, string> &vectors, unsigned int dimens
 
 int main(int argc, char **argv)
 {
-    string corpusPath = "/home/laboratory/corpus/";
-    string vectorsDict = corpusPath + "en"+"_vectorTable/"+"en"+"_vectors_"+ "50" +".txt";
-    string wordslist = corpusPath + "en" + "/test_"+"book"+"_new.txt.extract";
+    string vectorsDict = "../cn_vectors_50.txt";
+    string wordslist = "../label_book_new.txt.extract";
     
 
-    string dictPath = "test_book_new.txt.extract_50.lstmDict";
-    string serializationPath = "test_book_new.txt.extract_50.serialization";
+    string dictPath = "../test_book_new.txt.extract_50.lstmDict";
+    string serializationPath = "../test_book_new.txt.extract_50.serialization";
 
     map<string, string> *dict = generateVectirDict(vectorsDict);
     generate(wordslist, *dict, 50, dictPath, serializationPath);

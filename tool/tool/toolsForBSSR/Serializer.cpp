@@ -55,7 +55,7 @@ map<string, string> *generateVectirDict(string vectorDictPath)
             string vectorStr = "";
             for(unsigned int i = 1; i < (*vals).size(); i++)
             {
-                vectorStr += (*vals)[i];
+                vectorStr += (*vals)[i] + " ";
             }
             vectors->insert(pair<string, string>((*vals)[0], vectorStr));
         }
@@ -123,7 +123,7 @@ void generate(string wordlist, map<string, string> &vectors, unsigned int dimens
                     vector<double> data = RandInOne(dimension);
                     for(vector<double>::iterator iter = data.begin(); iter != data.end(); iter++)
                     {
-                        wordVector = str(*iter) + " ";
+                        wordVector += str(*iter) + " ";
                     }
                 }
                 dictIndex += 1;
