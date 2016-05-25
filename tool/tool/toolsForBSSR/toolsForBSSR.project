@@ -95,5 +95,6 @@
   <VirtualDirectory Name="src">
     <File Name="main.cpp"/>
     <File Name="Serializer.cpp"/>
+    <File Name="SerializerBiglstm.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

@@ -5,6 +5,7 @@
 #include <iterator>
 #include <algorithm>
 #include <fstream>
+#include <list>
 using namespace std;
 
 void maptest()
@@ -81,30 +82,46 @@ vector<string> *splitTest(string line, char delim)
 map<string, string> *generateVectirDict(string vectorDictPath);
 void generate(string wordlist, map<string, string> &vectors, unsigned int dimension, string dictPath, string serializationPath);
 
+map<string, bool> *loadSentiList(string dictPath);
+void replace(vector<string> &tokens, string targetStr, string replacer);
+
 int main(int argc, char **argv)
 {
-    string vectorsDict = "../cn_vectors_50.txt";
-    string wordslist = "../label_book_new.txt.extract";
     
-
-    string dictPath = "../test_book_new.txt.extract_50.lstmDict";
-    string serializationPath = "../test_book_new.txt.extract_50.serialization";
-
-    map<string, string> *dict = generateVectirDict(vectorsDict);
-    generate(wordslist, *dict, 50, dictPath, serializationPath);
+    vector<string> tokens;
+    tokens.push_back("SDFSDF");
+    tokens.push_back("  ");
+    tokens.push_back("  ");
+    tokens.push_back("SDFS");
+    replace(tokens, "  ", " ");
+    
+    string dictPath = "/home/laboratory/corpus/en/SentiWordList_en.txt";
+    map<string, bool> * dict = loadSentiList(dictPath);
+    cout << (*dict)["abandon"] << endl;
+    delete dict;
+//  vector<string> strs();
+//  string vectorsDict = "../cn_vectors_50.txt";
+//  string wordslist = "../test_book_new.txt.extract";
+//    
+//
+//  string dictPath = "../test_book_new.txt.extract_50.lstmDict";
+//  string serializationPath = "../test_book_new.txt.extract_50.serialization";
+//
+//  map<string, string> *dict = generateVectirDict(vectorsDict);
+//  generate(wordslist, *dict, 50, dictPath, serializationPath);
     //maptest();
     //ofilestreamTest();
     //inFileStreamTest();
-//    vector<string> *strs = NULL;
-//    strs = splitTest("SDF er gda we hyr ", ' ');
-//    for(unsigned int i = 0; i < strs->size(); i++)
-//    {
-//        cout << (*strs)[i] << endl;
-//    }
-//    cout << "(((((((((((((((((((((((((" << endl;
-//    delete strs;
+//  vector<string> *strs = NULL;
+//  strs = splitTest("SDF er gda we hyr ", ' ');
+//  for(unsigned int i = 0; i < strs->size(); i++)
+//  {
+//      cout << (*strs)[i] << endl;
+//  }
+//  cout << "(((((((((((((((((((((((((" << endl;
+//  delete strs;
 //    
-//    string str= "sdfsf";
-//    cout << str + str << endl;
+//  string str= "sdfsf";
+//  cout << str + str << endl;
 	return 0;
 }

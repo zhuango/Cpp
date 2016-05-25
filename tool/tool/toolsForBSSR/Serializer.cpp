@@ -75,7 +75,6 @@ vector<double> RandInOne(unsigned int size)
     }
     return data;
 }
-
 template<class T>
 string str(T number)
 {
@@ -84,57 +83,74 @@ string str(T number)
     return ss.str();
 }
 
-void generate(string wordlist, map<string, string> &vectors, unsigned int dimension, string dictPath, string serializationPath)
-{
-    map<string, int> dictTable;
-    int dictIndex = 0;
-    ofstream dictFile(dictPath.c_str());
-    ofstream serializationFile(serializationPath.c_str());
-    ifstream wordslistFile(wordlist.c_str());
-
-    /////////////////////////
-    int linenumber = 0;
-    int notFoundCount = 0;
-    /////////////////////////
-    
-    string line;
-    while(getline(wordslistFile, line))
+    void generate(string wordlist, map<string, string> &vectors, unsigned int dimension, string dictPath, string serializationPath)
     {
-        string serialicationNumbersStr = "";
-        linenumber += 1;
-        if(linenumber % 1000 == 0)
+        map<string, int> dictTable;
+        int dictIndex = 0;
+        ofstream dictFile(dictPath.c_str());
+        ofstream serializationFile(serializationPath.c_str());
+        ifstream wordslistFile(wordlist.c_str());
+
+        /////////////////////////
+        int linenumber = 0;
+        int notFoundCount = 0;
+        /////////////////////////
+        
+        string line;
+        while(getline(wordslistFile, line))
         {
-            cout << serializationPath + " generate serialization: " << linenumber << endl;
-        }
-        vector<string> *words = split(line, ' ');
-        string wordVector = "";
-        for(unsigned int i = 0; i < words->size(); i++)
-        {
-            string word = (*words)[i];
-            if(dictTable.find(word) == dictTable.end())
+            string serialicationNumbersStr = "";
+            linenumber += 1;
+            if(linenumber % 1000 == 0)
             {
-                if(vectors.find(word) != vectors.end())
-                {
-                    wordVector = vectors[word];
-                }
-                else
-                {
-                    notFoundCount += 1;
-                    vector<double> data = RandInOne(dimension);
-                    for(vector<double>::iterator iter = data.begin(); iter != data.end(); iter++)
-                    {
-                        wordVector += str(*iter) + " ";
-                    }
-                }
-                dictIndex += 1;
-                dictTable.insert(pair<string, int>(word, dictIndex));
-                dictFile << wordVector << "\n";
+                cout << serializationPath + " generate serialization: " << linenumber << endl;
             }
-            serialicationNumbersStr += str(dictTable[word]) + " ";
+            vector<string> *words = split(line, ' ');
+            string wordVector = "";
+            for(unsigned int i = 0; i < words->size(); i++)
+            {
+                string word = (*words)[i];
+                if(dictTable.find(word) == dictTable.end())
+                {
+                    if(vectors.find(word) != vectors.end())
+                    {
+                        wordVector = vectors[word];
+                    }
+                    else
+                    {
+                        notFoundCount += 1;
+                        vector<double> data = RandInOne(dimension);
+                        for(vector<double>::iterator iter = data.begin(); iter != data.end(); iter++)
+                        {
+                            wordVector += str(*iter) + " ";
+                        }
+                    }
+                    dictIndex += 1;
+                    dictTable.insert(pair<string, int>(word, dictIndex));
+                    dictFile << wordVector << "\n";
+                }
+                serialicationNumbersStr += str(dictTable[word]) + " ";
+            }
+            serializationFile << serialicationNumbersStr << "\n";
         }
-        serializationFile << serialicationNumbersStr << "\n";
+        cout << serializationPath << " Done, there are " << notFoundCount << " words which are not found.";
+        dictFile.close();
+        serializationFile.close();
     }
-    cout << serializationPath << " Done, there are " << notFoundCount << " words which are not found.";
-    dictFile.close();
-    serializationFile.close();
+
+extern "C"
+{
+    void Serializer(char * vectorDictPath,char * wordlist, unsigned int dimension, char * dictPath, char * serializationPath)
+    {
+        map<string, string> *vectors = generateVectirDict(vectorDictPath);
+        generate(wordlist, *vectors, dimension, dictPath, serializationPath);
+    }
+}
+
+extern "C"
+{
+    void test(char * s)
+    {
+        cout << "This is a test funtion: " << s << endl;
+    }
 }
