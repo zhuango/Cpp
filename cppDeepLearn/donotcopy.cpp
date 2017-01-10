@@ -1,6 +1,3 @@
-#ifndef _DONOTCOPY_H_
-#define _DONOTCOPY_H_
-
 class Test{
 	public:
 		Test(){};
@@ -9,4 +6,12 @@ class Test{
 		Test & operator =(const Test&);
 };
 
-#endif
+int main()
+{
+	Test a;
+	Test b;
+//	Test c(a);
+	Test d = b;
+	return 0;
+}
+
