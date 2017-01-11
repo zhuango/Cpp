@@ -77,6 +77,15 @@ namespace DiscriminatedUnionTest
         // In the  example, note that the union in the Input struct has no name. 
         // This is an anonymous union and its members can be accessed 
         // as if they were direct members of the struct. 
+        // Names declared in an anonymous union are used directly, like nonmember
+        // variables. Therefore, the names declared in an anonymous union must be 
+        // unique in the surrounding scope.
+        // In addition to the restrictions listed in Union Member Data, anonymous 
+        // unions are subject to additional restrictions:
+        //    1.They must also be declared as static if declared in file or namespace scope.
+        //    2.They can have only public members; private and protected members in anonymous
+        //unions generate errors.
+        //    3.They cannot have member functions.
         union
         {
             TempData temp;
