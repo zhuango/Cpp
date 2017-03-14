@@ -40,13 +40,29 @@ namespace Type3
     class A
     {
         public:
-        virtual void func(){}
-        char x;
+        virtual void func(){cout << "func" << endl;}
+        char x ='c';
     };
     class B: public virtual A
     {
         public:
-        virtual void foo(){}
+        virtual void foo(){cout << "foo" << endl;}
+    };
+}
+
+namespace Type3ImpVirtualFunction
+{
+    class A
+    {
+        public:
+        virtual void func(){cout << "func" << endl;}
+        char x ='A';
+    };
+    class B: public virtual A
+    {
+        public:
+        virtual void func() {cout << "func in B" << endl;}
+        virtual void foo(){cout << "foo" << endl;}
     };
 }
 
@@ -103,15 +119,64 @@ void testType4()
 }
 void testVirtualFunctionTable()
 {
-    Type1::A aType1;
     Type1::B bType1;
 
     cout << "===================================" << endl;
+    cout << sizeof(bType1) << endl;
     typedef void (*function)(void);
     function func = (function) *( (long*) (*( (long*)(&bType1) )));
+    cout << (long*) (*( (long*)(&bType1) )) << endl;
     func();
+
     func = (function) *( (long*) (*( (long*)(&bType1) )) + 1 );
+    cout << (long*) (*( (long*)(&bType1) )) + 1 << endl;
     func();
+
+    // you will step into another object address space.
+    // func = (function) *( (long*) (*( (long*)(&bType1) + 1 )));
+    // cout << (long*) (*( (long*)(&bType1) + 1 )) << endl;
+    // func();
+    cout << "===================================" << endl;
+}
+
+void testVirtualPointerToBaseClass()
+{
+    typedef void (*function)(void);
+    function func;
+
+    // Type3::A aType3;
+    // cout << aType3.x << endl;
+    Type3::B bType3;
+    cout << "===================================" << endl;
+    cout << sizeof(bType3) << endl;
+    cout << sizeof(char) << endl;
+
+
+    func = (function) *( (long*) (*( (long*)(&bType3) )));
+    func();
+    
+    func = (function) *( (long*) (*( (long*)(&bType3) + 1 )) );
+    func();
+
+    cout << "===================================" << endl;
+
+
+    Type3ImpVirtualFunction::B bType3ImpVirtualFunction;
+    cout << "===================================" << endl;
+    cout << sizeof(bType3ImpVirtualFunction) << endl;
+
+    func = (function) *( (long*) (*( (long*)(&bType3ImpVirtualFunction) )) );
+    func(); 
+    func = (function) *( (long*) (*( (long*)(&bType3ImpVirtualFunction) )) + 1 );
+    func();
+
+    func = (function) *( (long*) (*( (long*)(&bType3ImpVirtualFunction) + 1 )));
+    func();
+
+    char baseA = (char)(*( (long*)(&bType3ImpVirtualFunction) + 2 ));
+    cout << baseA  << endl;
+    //baseA->func();
+    
     cout << "===================================" << endl;
 }
 
@@ -120,9 +185,10 @@ int main(void)
     char *add;
     cout << "size of address: " << sizeof(add) << endl;
 
-    testType1();
-    testType2();
-    testType3();
-    testType4();
-    testVirtualFunctionTable();
+    // testType1();
+    // testType2();
+    // testType3();
+    // testType4();
+    // testVirtualFunctionTable();
+    testVirtualPointerToBaseClass();
 }
