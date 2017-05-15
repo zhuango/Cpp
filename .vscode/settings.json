@@ -1,0 +1,25 @@
+{
+    "files.associations": {
+        "*.m": "matlab",
+        "valarray": "cpp",
+        "iostream": "cpp",
+        "random": "cpp",
+        "cctype": "cpp",
+        "chrono": "cpp",
+        "clocale": "cpp",
+        "cstdint": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "ctime": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "exception": "cpp",
+        "initializer_list": "cpp",
+        "mutex": "cpp",
+        "new": "cpp",
+        "ratio": "cpp",
+        "thread": "cpp",
+        "type_traits": "cpp",
+        "typeinfo": "cpp"
+    }
+}
