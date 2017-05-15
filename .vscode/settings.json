@@ -20,6 +20,8 @@
         "ratio": "cpp",
         "thread": "cpp",
         "type_traits": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "ostream": "cpp",
+        "sstream": "cpp"
     }
 }

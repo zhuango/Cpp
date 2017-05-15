@@ -14,6 +14,7 @@
         {
             "name": "Linux",
             "includePath": [
+                "./",
                 "/usr/include",
                 "/usr/include/c++/4.8",
                 "/usr/include/c++/4.8/backward",
