@@ -30,6 +30,8 @@
         "limits": "cpp",
         "streambuf": "cpp",
         "string": "cpp",
-        "istream": "cpp"
+        "istream": "cpp",
+        "bitset": "cpp",
+        "cstddef": "cpp"
     }
 }
