@@ -22,6 +22,14 @@
         "type_traits": "cpp",
         "typeinfo": "cpp",
         "ostream": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "*.tcc": "cpp",
+        "fstream": "cpp",
+        "iosfwd": "cpp",
+        "tuple": "cpp",
+        "limits": "cpp",
+        "streambuf": "cpp",
+        "string": "cpp",
+        "istream": "cpp"
     }
 }
