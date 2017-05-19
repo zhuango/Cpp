@@ -39,6 +39,7 @@
         "unordered_set": "cpp",
         "system_error": "cpp",
         "deque": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "list": "cpp"
     }
 }
