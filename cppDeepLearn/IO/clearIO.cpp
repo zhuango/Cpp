@@ -25,10 +25,31 @@ void on()
 }
 void off()
 {
-    cin.clear(cin.rdstate() & !cin.failbit & ~cin.badbit);
+    cin.clear(cin.rdstate() & ~cin.failbit & ~cin.badbit);
 }
 
 int main(void)
 {
     cout << "before read" << endl;
+    if (cin.good()) cout << "cin's good" << endl;
+    if (cin.bad()) cout << "cin's bad" << endl;
+    if (cin.fail()) cout << "cin's faile" << endl;
+    if (cin.eof()) cout << "cin's eof" << endl;
+
+    
+    on();
+    cout << "after read" << endl;	
+    if (cin.good()) cout << "cin's good" << endl;
+	if (cin.bad()) cout << "cin's bad" << endl;
+	if (cin.fail()) cout << "cin's fail" << endl;
+	if (cin.eof()) cout << "cin's eof" << endl;
+
+    off();
+    cout << "after off" << endl;
+    if (cin.good()) cout << "cin's good" << endl;
+    if (cin.bad()) cout << "cin's bad" << endl;
+    if (cin.eof()) cout << "cin's eof" << endl;
+    if (cin.fail()) cout << "cin's fail" << endl;
+
+    return 0;
 }
