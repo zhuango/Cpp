@@ -32,6 +32,8 @@
         "string": "cpp",
         "istream": "cpp",
         "bitset": "cpp",
-        "cstddef": "cpp"
+        "cstddef": "cpp",
+        "functional": "cpp",
+        "array": "cpp"
     }
 }
