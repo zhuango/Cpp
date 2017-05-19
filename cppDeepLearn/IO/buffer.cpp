@@ -1,0 +1,34 @@
+#include <iostream>
+#include <thread>
+
+using std::cin;
+using std::endl;
+using std::flush;
+using std::ends;
+
+using std::unitbuf;
+using std::nounitbuf;
+using std::cout;
+
+int main()
+{
+    // writes hi and a newline, then flushes the buffer
+    cout << "hi!" << endl;
+
+	// writes hi, then flushes the buffer; adds no data
+    cout << "hi!" << flush;
+
+    // writes hi and a null, then flushes the buffer
+    cout << "hi!" << ends;
+
+    // all writes will be flushed immediately
+    cout << unitbuf;
+
+    // any output is flushed immediately, no buffering
+    cout << "first" << " second";
+
+    // returns to normal buffering
+    cout << nounitbuf;
+
+    return 0;
+}

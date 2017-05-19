@@ -34,6 +34,9 @@
         "bitset": "cpp",
         "cstddef": "cpp",
         "functional": "cpp",
-        "array": "cpp"
+        "array": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "system_error": "cpp"
     }
 }
