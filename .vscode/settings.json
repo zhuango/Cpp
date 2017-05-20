@@ -40,6 +40,8 @@
         "system_error": "cpp",
         "deque": "cpp",
         "vector": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "forward_list": "cpp",
+        "utility": "cpp"
     }
 }
