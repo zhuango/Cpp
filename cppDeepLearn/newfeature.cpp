@@ -239,6 +239,11 @@ void TypeInfer()
 }
 
 //Lambda functions and expressions(C++11)
+// [a,&b] where a is captured by copy and b is captured by reference.
+// [this] captures the current object (*this) by reference
+// [&] captures all automatic variables used in the body of the lambda by reference and current object by reference if exists
+// [=] captures all automatic variables used in the body of the lambda by copy and current object by reference if exists
+// [] captures nothing
 void lambdaTest()
 {
     auto fun = [](int x, int y) -> int { return x + y; };
