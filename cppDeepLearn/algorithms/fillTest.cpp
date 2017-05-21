@@ -20,5 +20,19 @@ int main(void)
     fill(vec.begin(), vec.begin() + vec.size() / 2, 10);
     cout << accumulate(vec.begin(), vec.end(), 0) << endl;
     
+    fill_n(vec.begin(), vec.size() / 2, 0);
+    cout << accumulate(vec.begin(), vec.end(), 0) << endl;
+ 
+    fill_n(back_inserter(vec), 10, 42);
+    cout << accumulate(vec.begin(), vec.end(), 0) << endl;
+
+    vector<string> v;
+    string s;
+    while (cin >> s)
+    {
+        v.push_back(s);
+    }
+    string concat = accumulate(v.cbegin(), v.cend(), string("[Start]"));
+    cout << concat << endl;
     return 0;
 }
