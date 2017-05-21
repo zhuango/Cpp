@@ -8,6 +8,8 @@ int main(void)
 {
     istream_iterator<int> in(cin);
     istream_iterator<int> eof;
+    int s = *(in ++);
+    cout << s << endl;
     cout << accumulate(in, eof, 0) << endl;
     // operator++ of istream_iterator: Internally, the function extracts an element from its associated stream and stores it internally to be returned when dereferenced.
     cout << (*in.operator->()) << endl;
