@@ -81,12 +81,16 @@ void TestSharePtrMethod()
 		std::cout << "another point is bad." << std::endl;
 	}
 	std::cout << finalPointer.use_count() << std::endl;
+	if (finalPointer.unique())
+	{
+		cout << "final pointer is unique pointer to object." << endl;
+	}
 }
 
 void TestMakeSharedMethod1()
 {
 	int a = 100;
-	auto ptr = make_shared<int>
+	auto ptr = make_shared<int>(a);
 }
 
 int main()
