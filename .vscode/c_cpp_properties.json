@@ -16,23 +16,23 @@
             "includePath": [
                 "./",
                 "/usr/include",
-                "/usr/include/c++/4.8",
-                "/usr/include/c++/4.8/backward",
+                "/usr/include/c++/6",
+                "/usr/include/c++/6/backward",
                 "/usr/include/x86_64-linux-gnu",
-                "/usr/include/x86_64-linux-gnu/c++/4.8",
-                "/usr/lib/gcc/x86_64-linux-gnu/4.8/include",
-                "/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed",
+                "/usr/include/x86_64-linux-gnu/c++/6",
+                "/usr/lib/gcc/x86_64-linux-gnu/6/include",
+                "/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed",
                 "/usr/local/include"
             ],
             "browse": {
                 "path": [
                     "/usr/include",
-                    "/usr/include/c++/4.8",
-                    "/usr/include/c++/4.8/backward",
+                    "/usr/include/c++/6",
+                    "/usr/include/c++/6/backward",
                     "/usr/include/x86_64-linux-gnu",
-                    "/usr/include/x86_64-linux-gnu/c++/4.8",
-                    "/usr/lib/gcc/x86_64-linux-gnu/4.8/include",
-                    "/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed",
+                    "/usr/include/x86_64-linux-gnu/c++/6",
+                    "/usr/lib/gcc/x86_64-linux-gnu/6/include",
+                    "/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed",
                     "/usr/local/include"
                 ]
             }
