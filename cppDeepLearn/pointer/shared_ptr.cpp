@@ -3,8 +3,10 @@
 #include <iostream>
 #include <string>
 #include <memory>
-
+using std::shared_ptr;
+using std::make_shared;
 using std::string;
+using namespace std;
 
 class  ResourceNeedRelease
 {
@@ -30,7 +32,7 @@ public:
 	}
 };
 
-
+// std::auto_ptr’ is deprecated deprecated.
 void TestAutoPtrMethod()
 {
 	ResourceNeedRelease *resource = ResourceNeedReleaseFactory::CreateResourceNeedRelease("1");
@@ -54,18 +56,21 @@ void TestAutoPtrMethod()
 		std::cout << "ptr2 is null." << std::endl;
 	}
 }
-std::tr1::shared_ptr<ResourceNeedRelease> finalPointer;
 void TestSharePtrMethod()
 {
-	std::tr1::shared_ptr<ResourceNeedRelease> ptrToResource(ResourceNeedReleaseFactory::CreateResourceNeedRelease("2"));
-	std::tr1::shared_ptr<ResourceNeedRelease> ptrToResource2(ptrToResource);
+	std::shared_ptr<ResourceNeedRelease> finalPointer;
+	std::shared_ptr<ResourceNeedRelease> ptrToResource(ResourceNeedReleaseFactory::CreateResourceNeedRelease("2"));
+	std::shared_ptr<ResourceNeedRelease> ptrToResource2(ptrToResource);
 	ptrToResource.get()->id = "4";
+	// id = 4
 	std::cout << ptrToResource2.get()->id << std::endl;
 
 	finalPointer = ptrToResource2;
+	// print 3, finalPointer ptrToResource2 ptrToResource.
 	std::cout << finalPointer.use_count() << std::endl;
+	// ptrToResource2 release the pointer.
 	ptrToResource2.~shared_ptr();
-	
+	// print 2, ptrToResource2 release the pointer.
 	std::cout << finalPointer.use_count() << std::endl;
 	try
 	{
@@ -78,23 +83,16 @@ void TestSharePtrMethod()
 	std::cout << finalPointer.use_count() << std::endl;
 }
 
-void main()
+void TestMakeSharedMethod1()
+{
+	int a = 100;
+	auto ptr = make_shared<int>
+}
+
+int main()
 {
 	TestAutoPtrMethod();
+	cout << "++++++++++++++++++++++++++++" << endl;
 	TestSharePtrMethod();
-
-	ResourceNeedRelease *p = finalPointer.get();
-	std::cout << finalPointer.use_count() << std::endl;
-	if(finalPointer.get() != NULL)
-	{
-		try 
-		{
-			std::cout << finalPointer.get()->id << std::endl;
-			throw 1;
-		}
-		catch(...)
-		{
-		}
-	}
-	finalPointer.~shared_ptr();
+	return 0;
 }

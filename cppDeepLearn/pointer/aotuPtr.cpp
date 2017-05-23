@@ -37,6 +37,5 @@ void TestMethod()
 
 void main()  
 {
-	//只会打印2的释放 消息。
 	TestMethod();
 }
