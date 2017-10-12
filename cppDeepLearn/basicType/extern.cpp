@@ -1,0 +1,1 @@
+int externalVariable = 100;
