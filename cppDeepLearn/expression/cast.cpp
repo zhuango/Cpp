@@ -16,7 +16,7 @@ int main(void)
     // A const_cast changes only a low-level const in its operand
     // using a const_cast in order to write to a const object is undefined.
     // we cannot use a const_cast to change the type of an expression
-    // this const it low_level, and const in "char * const pc" is top-level.
+    // this const is low_level, and const in "char * const pc" is top-level.
     const char *pc;
     char *p1 = const_cast<char *>(pc);
 
