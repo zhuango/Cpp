@@ -1,6 +1,8 @@
 {
     "files.associations": {
+        "*.m": "matlab",
         "ostream": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "bitset": "cpp"
     }
 }
