@@ -45,5 +45,9 @@ int main(void)
     cout << "DDDDDDDDD" << endl;
     pv = reinterpret_cast<void*>(&dd);
 
+    cout << "test const_cast to top-level const make an error." << endl;
+    // int gs = 100;
+    // int gsConst = const_cast<const int>(gs);
+    
     return 0;
 }
