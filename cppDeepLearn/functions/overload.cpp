@@ -29,10 +29,14 @@ float Add(float a, float b)
 }
 int main(void)
 {
-    float result = Add(1.6, 2.0);
+    float result = Add(1.6f, 2.0f);
     // 3 it is.
     cout << result << endl;
 
-    float re = Add (1.6, 2.4);
+    float re = Add (1, 2);
+
+    float a = 12.3;
+    float b = 11.2;
+    float aPlusb = Add(a, b);
     return 0;
 }
