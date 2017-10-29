@@ -27,6 +27,30 @@ float Add(float a, float b)
     cout << "add two float number" << endl;
     return a + b;
 }
+
+enum MyEnum
+{
+    A,
+    B,
+    C
+};
+
+class MyClass
+{
+public:
+    MyClass(double a){}
+};
+
+bool operator==(char a, MyClass e)
+{
+    return false;
+}
+
+void screen(int sz, int sa, char a){cout << " you are in screen function" << endl;}
+void screen(int, int, char=' ');//ok
+//void screen(int, int=12, char='2');// error ,char has been specified earlier.
+void screen(int, int=12, char);
+void screen(int=1, int, char);
 int main(void)
 {
     float result = Add(1.6f, 2.0f);
@@ -38,5 +62,9 @@ int main(void)
     float a = 12.3;
     float b = 11.2;
     float aPlusb = Add(a, b);
+
+    char aChar = 0;
+    MyEnum anEnum = MyEnum::A;
+    cout << (aChar == anEnum) << endl;
     return 0;
 }
