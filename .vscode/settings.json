@@ -3,6 +3,7 @@
         "*.m": "matlab",
         "ostream": "cpp",
         "iostream": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "functional": "cpp"
     }
 }
