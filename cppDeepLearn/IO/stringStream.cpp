@@ -77,7 +77,19 @@ void testProcess()
 }
 int main(void)
 {
-    istringstream is;
-    is.
+    //testProcess();
+    int a = 100;
+    istringstream iss;
+    iss >> a;
+    cout << a << endl;
+
+    istringstream iss1("1111");
+    iss1 >> a;
+    cout << a << endl;
+
+    cout << "======================" << endl;
+    ostringstream oss;
+    oss << a << "sfsdf" << 12.2 << endl;
+    cout << oss.str() << endl;
     return 0;
 }
