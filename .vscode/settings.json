@@ -8,6 +8,13 @@
         "array": "cpp",
         "*.tcc": "cpp",
         "fstream": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "deque": "cpp",
+        "initializer_list": "cpp",
+        "optional": "cpp",
+        "string_view": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "valarray": "cpp"
     }
 }
