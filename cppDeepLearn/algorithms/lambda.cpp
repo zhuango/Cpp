@@ -2,12 +2,36 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <functional>
+#include <thread>
 
 using namespace std;
 
 bool isShorter(const string &s1, const string &s2)
 {
     return s1.size() < s2.size();
+}
+
+int justReturn(int &c)
+{
+    return ++c;
+}
+
+class Test
+{
+public:
+    int data = 100;
+};
+
+Test justReturnObj(Test &t)
+{
+    t.data = t.data + 1;
+    return t;
+}
+
+void justSetObj(Test &t)
+{
+    t.data = t.data + 1;
 }
 
 int main(void)
@@ -55,5 +79,27 @@ int main(void)
 
     int te = 100;
     auto fmuR = [&te] () {++te; };
+
+    int b = 12;
+    auto fmuRR= [](int &a) {return ++a;};
+    cout << fmuRR(b) << endl;
+    cout << b << endl;
+
+    int c = 100;
+    auto fmuref= [&c](){ return justReturn(ref(c)); };
+    cout << fmuref() << endl;
+
+    Test t;
+    auto fmurefClass = [&t]() {return justReturnObj(t);};
+    cout << fmurefClass().data << endl;
+
+    auto fmurefClass1 = [&t]() {return justSetObj(ref(t));};
+    fmurefClass1();
+    cout << t.data << endl;
+
+    thread *th = new thread(fmurefClass1);
+    th->join();
+    delete th;
+
     return 0;
 }
