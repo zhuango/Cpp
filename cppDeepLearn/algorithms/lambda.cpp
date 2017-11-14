@@ -47,5 +47,13 @@ int main(void)
     a = 0;
     cout << fff() << endl;
     cout << fff1() << endl;
+
+    // if there is no mutable and captured by value, Error: increment of read-only variable ‘a’
+    // if mutable is there, then () must not be omit.
+    auto fmu = [a] () mutable {return ++a;};
+    cout << fmu() << endl;
+
+    int te = 100;
+    auto fmuR = [&te] () {++te; };
     return 0;
 }
