@@ -5,7 +5,19 @@ using std::multiset;
 
 #include <vector>
 #include <string>
+
 using namespace std;
+
+class Test
+{
+    public:
+    int data;
+};
+
+bool CompareTest(const Test &a, const Test &b)
+{
+    return a.data < b.data;
+}
 
 int main(void)
 {
@@ -35,11 +47,22 @@ int main(void)
     set<string> set1;
     set1.insert("the");
     set1.insert("and");
+    set1.insert("and");
 
     ivec = {2, 4, 6, 8, 2, 4, 6, 8};
     set<int> set2;
     set2.insert(ivec.cbegin(), ivec.cend());
     set2.insert({1, 3, 5, 7, 1, 3, 5, 7});
     
+    cout << "DDDDDDDDDDDDDDDDDDDDD" << endl;
+    set<Test, decltype(CompareTest)*> testSet(CompareTest);
+    Test t;
+    t.data = 100;
+    testSet.insert(t);
+    t.data = 200;
+    testSet.insert(t);
+    
+    for(auto &a : testSet) { cout << a.data << " "; };
+    cout << endl;
     return 0;
 }
