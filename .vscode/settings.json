@@ -45,6 +45,7 @@
         "typeinfo": "cpp",
         "valarray": "cpp",
         "stack": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "utility": "cpp"
     }
 }
